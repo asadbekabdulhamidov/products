@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import { User } from '@/types/user';
 
@@ -10,10 +11,10 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
   console.log(user);
 
   return (
-    <div className="border rounded-xl shadow-md p-6 bg-gradient-to-br from-white to-gray-50 hover:shadow-xl hover:scale-[1.02] transition transform duration-300">
+    <div className="border rounded-xl shadow-md p-6 bg-gradient-to-br border-green-400 from-white to-gray-50 hover:shadow-xl hover:scale-[1.02] transition transform duration-300">
       {/* Avatar */}
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold text-lg shadow">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 text-white font-bold text-lg shadow">
           {user.name.charAt(0)}
         </div>
         <div>
@@ -41,9 +42,12 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
 
       {/* Action Button */}
       <div className="mt-5">
-        <button className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+        <Link
+          href={`/users/${user.id}`}
+          className="w-full py-2 px-4 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition"
+        >
           View Profile
-        </button>
+        </Link>
       </div>
     </div>
   );

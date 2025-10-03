@@ -8,7 +8,7 @@ function Footer() {
       <Link
         target="_blank"
         href={'https://github.com/asadbekabdulhamidov'}
-        className="text-gray-500 text-2x font-medium"
+        className="text-green-400 text-2x font-medium"
       >
         Asadbek Abdulkhamidov following
       </Link>
