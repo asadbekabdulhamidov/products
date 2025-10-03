@@ -8,13 +8,13 @@ function Navbar() {
       <div className="flex items-center gap-15">
         <Link
           className="text-[20px] text-green-500 font-bold hover:text-green-700 transition-all duration-200"
-          href="/users"
+          href="/"
         >
           Users
         </Link>
         <Link
           className="text-[20px] text-green-500 font-bold hover:text-green-700 transition-all duration-200"
-          href="/product"
+          href="/products"
         >
           Products
         </Link>
