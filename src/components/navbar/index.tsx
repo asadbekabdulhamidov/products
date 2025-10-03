@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function Navbar() {
   return (
-    <nav className="container mx-auto flex items-center justify-between py-8">
+    <nav className="container mx-auto px-3 flex items-center justify-between py-8">
       <h1 className="text-3xl font-extrabold">Logo</h1>
       <div className="flex items-center gap-15">
         <Link

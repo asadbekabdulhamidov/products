@@ -1,10 +1,28 @@
-import React from 'react';
+import UserList from '@/components/userList';
+import { User } from '@/types/user';
 
 async function Home() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const users = await res.json();
+  try {
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
 
-  return <div>Home</div>;
+    if (!res.ok) {
+      throw new Error('Foydalanuvchilarni yuklashda muammo!');
+    }
+
+    const users: User[] = await res.json();
+
+    return (
+      <div className="container mx-auto px-3">
+        <UserList users={users} />
+      </div>
+    );
+  } catch (error: any) {
+    return (
+      <div className="text-red-500 font-bold container mx-auto">
+        ❌ Xatolik: {error.message}
+      </div>
+    );
+  }
 }
 
 export default Home;
